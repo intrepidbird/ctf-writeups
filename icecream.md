@@ -78,4 +78,4 @@ This is clearly readable plaintext, so it's the flag. I submitted succesfully!
 
 ## Referenced materials
 
-[include links to referenced materials, writeups, etc. here](https://google.com)
+[Alpertron](https://www.alpertron.com.ar/ECM.HTM) [LSB Calculator](https://planetcalc.com/9345/)
