@@ -74,13 +74,37 @@ After splitting the ciphertext up into 6 strings of 6, I then had the idea to sp
 
 This method worked, with all of my code located here: [solve script](https://github.com/realrealAlexS/litctfwriteups/blob/main/solvescripticecream.py)
 
+```
+from Crypto.Util.number import inverse
+
+e = 17
+N = 7663
+phi = 7488
+# Change the ciphertext NINE times, with the first being 7477 and the last being 4183. 
+# Basically, repeat this code 9 times, but changing the value of 'ciphertext' 7477, 1776, 4508, 1527, 7300, 2218, 5380, 6736, 4183
+ciphertext = 7477
+
+# Calculate the private key d
+d = inverse(e, phi)
+
+# Decrypt the ciphertext
+plaintext = pow(ciphertext, d, N)
+print(plaintext)
+
+# Convert the plaintext from an integer to a string
+message = ""
+while plaintext > 0:
+    message += chr(plaintext % 256)
+    plaintext //= 256
+message = message[::-1]
+
+print(message)
+```
 This printed out i,C,3,_,c,r,4,e,m.
 
 This is clearly readable plaintext (with meaning), so it's the flag.
 
 ![image](https://github.com/realrealAlexS/litctfwriteups/assets/140008493/b1c9a3eb-dbd4-4054-9d2b-1c0f7519d9f4)
-
-
 
 ## Flag
 
@@ -88,8 +112,12 @@ This is clearly readable plaintext (with meaning), so it's the flag.
 
 ## Personal Opinion
 
-I thought this challenge was very well made by the developer. It let me have a better understanding of Diffie-Hellman Key Exchange, pracitce my public-key encryption, and find out tricks to cracking RSA. It was a well made challenge, not very guessy, and quite fun. The infrastructure was pretty well made, and the flag was meaningful and not like `flag{never_gonna_give_u_up`.
+I thought this challenge was very well made by the developer. It let me have a better understanding of Diffie-Hellman Key Exchange, practice my public-key encryption, and find out tricks to cracking RSA. It was a well made challenge, not very guessy, and quite fun. The infrastructure was pretty well made, and the flag was meaningful and not like `flag{never_gonna_give_u_up`. I hope the XOR chall was kind of similar and I'm interested to see the writeup for that.
 
 ## Referenced materials
 
 [Alpertron](https://www.alpertron.com.ar/ECM.HTM)     [LSB Calculator](https://planetcalc.com/9345/)     [wikipedia](wikipedia.org)
+
+### More Stuff
+
+Check out my discord bot which has vulnerabilities! https://sites.google.com/view/intrepidbot
