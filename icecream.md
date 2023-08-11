@@ -74,7 +74,7 @@ After splitting the ciphertext up into 6 strings of 6, I then had the idea to sp
 
 This method worked, with all of my code located here: [solve script](https://github.com/realrealAlexS/litctfwriteups/blob/main/solvescripticecream.py)
 
-```
+```py
 from Crypto.Util.number import inverse
 
 e = 17
