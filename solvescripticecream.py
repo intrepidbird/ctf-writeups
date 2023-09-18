@@ -4,7 +4,7 @@ e = 17
 N = 7663
 phi = 7488
 # Change the ciphertext NINE times, with the first being 7477 and the last being 4183. 
-#Basically, repeat this code 9 times, but changing the value of 'ciphertext' 7477, 1776, 4508, 1527, 7300, 2218, 5380, 6736, 4183
+# Basically, repeat this code 9 times, but changing the value of 'ciphertext' 7477, 1776, 4508, 1527, 7300, 2218, 5380, 6736, 4183
 ciphertext = 7477
 
 # Calculate the private key d
